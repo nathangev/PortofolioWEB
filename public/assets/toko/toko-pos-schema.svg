@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #EFECE6; }
+      .border { stroke: #1E2320; stroke-width: 1.5; fill: none; }
+      .panel { fill: #FAF9F6; stroke: #1E2320; stroke-width: 1.2; }
+      .header-bar { fill: #1E2320; }
+      .header-text { fill: #EFECE6; font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+      .title { font-family: 'Archivo', sans-serif; font-size: 13px; font-weight: 700; fill: #1E2320; }
+      .text-sm { font-family: 'Lora', serif; font-size: 11px; fill: #1E2320; }
+      .text-code { font-family: 'Courier New', monospace; font-size: 11px; fill: #C98A2E; }
+      .grid-line { stroke: #D8D4C7; stroke-width: 0.8; stroke-dasharray: 4 4; }
+      .accent-badge { fill: #C98A2E; }
+      .badge-text { fill: #FFFFFF; font-family: 'Archivo', sans-serif; font-size: 9px; font-weight: 700; }
+      .arrow { stroke: #C98A2E; stroke-width: 1.5; marker-end: url(#arrowhead); fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C98A2E" />
+    </marker>
+  </defs>
+
+  <!-- Background Paper -->
+  <rect width="900" height="520" class="bg" />
+  <rect x="15" y="15" width="870" height="490" class="border" />
+  
+  <!-- Blueprint Construction Rules / Notebook lines -->
+  <line x1="15" y1="50" x2="885" y2="50" stroke="#1E2320" stroke-width="0.8" />
+  <text x="30" y="38" font-family="'Archivo', sans-serif" font-size="12" font-weight="700" fill="#1E2320">FIG 01.1 // TOKO SUMBER MAKMUR — OFFLINE-FIRST &amp; FIFO BATCH PIPELINE</text>
+  <text x="730" y="38" font-family="'Archivo', sans-serif" font-size="10" fill="#1E2320">SPECIFICATION REF: SE-S4-SM</text>
+
+  <!-- Left: Offline Queue (IndexedDB) -->
+  <g transform="translate(35, 75)">
+    <rect width="250" height="405" class="panel" />
+    <rect width="250" height="28" class="header-bar" />
+    <text x="12" y="19" class="header-text">CLIENT: VUE 3 + INDEXEDDB QUEUE</text>
+    
+    <text x="16" y="55" class="title">Offline Sales Buffer</text>
+    <text x="16" y="75" class="text-sm">Local transaction storage when network drops</text>
+    
+    <!-- Item 1 -->
+    <rect x="16" y="95" width="218" height="60" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" />
+    <text x="26" y="115" font-family="'Archivo', sans-serif" font-size="11" font-weight="600" fill="#1E2320">TX-90412 [PENDING SYNC]</text>
+    <text x="26" y="132" class="text-code">3x Minyak Goreng 2L</text>
+    <text x="26" y="146" class="text-sm">IndexedDB Key: #idb_90412 (Buffered)</text>
+
+    <!-- Item 2 -->
+    <rect x="16" y="165" width="218" height="60" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" />
+    <text x="26" y="185" font-family="'Archivo', sans-serif" font-size="11" font-weight="600" fill="#1E2320">TX-90413 [PENDING SYNC]</text>
+    <text x="26" y="202" class="text-code">5x Beras Premium 5kg</text>
+    <text x="26" y="216" class="text-sm">IndexedDB Key: #idb_90413 (Buffered)</text>
+
+    <!-- Sync Action Trigger -->
+    <rect x="16" y="240" width="218" height="42" fill="#FAF9F6" stroke="#C98A2E" stroke-width="1.2" />
+    <text x="26" y="260" font-family="'Archivo', sans-serif" font-size="11" font-weight="700" fill="#C98A2E">ATOMIC SYNC PROTOCOL</text>
+    <text x="26" y="274" class="text-sm">Sequential POST to /api/v1/sync</text>
+
+    <!-- Pinia & Role Note -->
+    <rect x="16" y="300" width="218" height="85" fill="#EFECE6" stroke="#1E2320" stroke-width="0.5" />
+    <text x="26" y="320" font-family="'Archivo', sans-serif" font-size="10" font-weight="700" fill="#1E2320">ROLE-BASED SCOPE:</text>
+    <text x="26" y="338" class="text-sm">• Cashier: Terminal POS &amp; Queue</text>
+    <text x="26" y="354" class="text-sm">• Warehouse: Batch Inflow &amp; Audit</text>
+    <text x="26" y="370" class="text-sm">• Owner: Reconciliation Analytics</text>
+  </g>
+
+  <!-- Middle Arrow -->
+  <path d="M 292 230 L 327 230" class="arrow" />
+  <text x="309" y="244" font-family="'Archivo', sans-serif" font-size="9" font-weight="700" fill="#C98A2E" text-anchor="middle">API DISPATCH</text>
+
+  <!-- Middle: Laravel 11 Backend & FIFO Engine -->
+  <g transform="translate(330, 75)">
+    <rect width="280" height="405" class="panel" />
+    <rect width="280" height="28" class="header-bar" />
+    <text x="12" y="19" class="header-text">BACKEND: LARAVEL 11 FIFO ENGINE</text>
+
+    <text x="16" y="55" class="title">FIFO Batch Allocation Algorithm</text>
+    <text x="16" y="75" class="text-sm">Pulls from oldest non-expired batch first</text>
+
+    <!-- Active Batches for SKU-B002 -->
+    <g transform="translate(16, 95)">
+      <rect width="248" height="70" fill="#FFFBF2" stroke="#C98A2E" stroke-width="1.2" />
+      <rect x="163" y="0" width="79" height="16" rx="2" fill="#C98A2E" />
+      <text x="167" y="11" class="badge-text">OLDEST (ACTIVE)</text>
+      <text x="12" y="32" font-family="'Archivo', sans-serif" font-size="11" font-weight="700" fill="#1E2320">BATCH: B-2024-04-A</text>
+      <text x="12" y="40" class="text-sm">In: 2024-04-10 | Exp: 2024-10-15</text>
+      <text x="12" y="56" class="text-code">Available: 8 units (Drawn first)</text>
+    </g>
+
+    <!-- Secondary Batch -->
+    <g transform="translate(16, 175)">
+      <rect width="248" height="70" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" />
+      <rect x="175" y="8" width="65" height="18" rx="2" fill="#1E2320" />
+      <text x="186" y="20" class="badge-text">RESERVE</text>
+      <text x="12" y="22" font-family="'Archivo', sans-serif" font-size="11" font-weight="700" fill="#1E2320">BATCH: B-2024-05-C</text>
+      <text x="12" y="40" class="text-sm">In: 2024-05-18 | Exp: 2024-12-20</text>
+      <text x="12" y="56" class="text-code">Available: 45 units (Held)</text>
+    </g>
+
+    <!-- Returns Correction Module -->
+    <g transform="translate(16, 255)">
+      <rect width="248" height="85" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" stroke-dasharray="2 2" />
+      <text x="12" y="20" font-family="'Archivo', sans-serif" font-size="11" font-weight="700" fill="#1E2320">RETURNS BATCH GENERATOR</text>
+      <text x="12" y="38" class="text-sm">Non-mutating returns protocol:</text>
+      <text x="12" y="54" class="text-code">Creates: RET-2024-05-09</text>
+      <text x="12" y="72" class="text-sm">Adjusts stock without altering past logs</text>
+    </g>
+
+    <text x="16" y="375" font-family="'Archivo', sans-serif" font-size="10" font-weight="700" fill="#1E2320">DB SCHEMA INTEGRITY:</text>
+    <text x="16" y="392" class="text-sm">Foreign key constraints enforce zero negative stock.</text>
+  </g>
+
+  <!-- Right Arrow -->
+  <path d="M 615 230 L 650 230" class="arrow" />
+  <text x="632" y="218" font-family="'Archivo', sans-serif" font-size="9" font-weight="700" fill="#C98A2E" text-anchor="middle">PERSIST</text>
+
+  <!-- Right: Relational Tables (SQLite) -->
+  <g transform="translate(655, 75)">
+    <rect width="210" height="405" class="panel" />
+    <rect width="210" height="28" class="header-bar" />
+    <text x="12" y="19" class="header-text">SQLITE DATABASE SCHEMA</text>
+
+    <!-- Table 1: Batches -->
+    <rect x="12" y="45" width="186" height="95" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" />
+    <rect x="12" y="45" width="186" height="20" fill="#EFECE6" />
+    <text x="20" y="59" font-family="'Archivo', sans-serif" font-size="10" font-weight="700" fill="#1E2320">TABLE: batches</text>
+    <text x="20" y="78" class="text-code">id (PK)</text>
+    <text x="20" y="93" class="text-code">product_id (FK)</text>
+    <text x="20" y="108" class="text-code">batch_code, expiry_date</text>
+    <text x="20" y="123" class="text-code">quantity_remaining</text>
+
+    <!-- Table 2: Sales -->
+    <rect x="12" y="155" width="186" height="95" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" />
+    <rect x="12" y="155" width="186" height="20" fill="#EFECE6" />
+    <text x="20" y="169" font-family="'Archivo', sans-serif" font-size="10" font-weight="700" fill="#1E2320">TABLE: sales_items</text>
+    <text x="20" y="188" class="text-code">id (PK), sale_id (FK)</text>
+    <text x="20" y="203" class="text-code">batch_id (FK)</text>
+    <text x="20" y="218" class="text-code">quantity, unit_price</text>
+    <text x="20" y="233" class="text-code">subtotal</text>
+
+    <!-- Table 3: Sync Logs -->
+    <rect x="12" y="265" width="186" height="95" fill="#FFFFFF" stroke="#1E2320" stroke-width="0.8" />
+    <rect x="12" y="265" width="186" height="20" fill="#EFECE6" />
+    <text x="20" y="279" font-family="'Archivo', sans-serif" font-size="10" font-weight="700" fill="#1E2320">TABLE: sync_logs</text>
+    <text x="20" y="298" class="text-code">client_uuid, synced_at</text>
+    <text x="20" y="313" class="text-code">records_processed</text>
+    <text x="20" y="328" class="text-code">conflict_resolution_status</text>
+    <text x="20" y="343" class="text-code">cashier_user_id (FK)</text>
+  </g>
+</svg>

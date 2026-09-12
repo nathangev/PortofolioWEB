@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg-bench { fill: #FAF9F6; }
+      .border { stroke: #1E2320; stroke-width: 1.5; fill: none; }
+      .tbl-header { fill: #1E2320; }
+      .tbl-header-accent { fill: #C98A2E; }
+      .tbl-title { font-family: 'Archivo', sans-serif; font-size: 10px; font-weight: 700; fill: #FAF9F6; }
+      .tbl-body { fill: #FFFFFF; stroke: #1E2320; stroke-width: 1; }
+      .font-mono { font-family: 'Courier New', monospace; font-size: 9.5px; fill: #1E2320; }
+      .font-pk { font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; fill: #C98A2E; }
+      .font-fk { font-family: 'Courier New', monospace; font-size: 9.5px; font-weight: 700; fill: #6E9C87; }
+      .font-tech { font-family: 'Archivo', sans-serif; }
+      .font-serif { font-family: 'Lora', serif; }
+      .fk-line { stroke: #C98A2E; stroke-width: 1.2; stroke-dasharray: 3 3; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="920" height="540" class="bg-bench" />
+  <rect x="15" y="15" width="890" height="510" class="border" />
+
+  <!-- Header Annotation -->
+  <line x1="15" y1="48" x2="905" y2="48" stroke="#1E2320" stroke-width="1" />
+  <text x="30" y="35" class="font-tech" font-size="12" font-weight="700" fill="#1E2320">ERD 04.RELATIONAL // SIMKOST DATABASE SCHEMA (11 TABLES, 3NF NORMALIZATION)</text>
+  <text x="735" y="35" class="font-tech" font-size="10" fill="#1E2320">COURSE: FINPRO LAB DATABASE</text>
+
+  <!-- TABLE 1: ROOMS -->
+  <g transform="translate(35, 65)">
+    <rect width="180" height="130" class="tbl-body" />
+    <rect width="180" height="22" class="tbl-header-accent" />
+    <text x="8" y="15" class="tbl-title">TABLE: rooms</text>
+    <text x="8" y="38" class="font-pk">PK  room_id (INT)</text>
+    <text x="8" y="54" class="font-fk">FK  category_id (INT)</text>
+    <text x="8" y="70" class="font-mono">    room_number (VARCHAR)</text>
+    <text x="8" y="86" class="font-mono">    floor_level (INT)</text>
+    <text x="8" y="102" class="font-mono">    occupancy_status (ENUM)</text>
+    <text x="8" y="118" class="font-mono">    electric_meter_id (FK)</text>
+  </g>
+
+  <!-- TABLE 2: ROOM CATEGORIES -->
+  <g transform="translate(35, 215)">
+    <rect width="180" height="110" class="tbl-body" />
+    <rect width="180" height="22" class="tbl-header" />
+    <text x="8" y="15" class="tbl-title">TABLE: room_categories</text>
+    <text x="8" y="38" class="font-pk">PK  category_id (INT)</text>
+    <text x="8" y="54" class="font-mono">    category_name (VARCHAR)</text>
+    <text x="8" y="70" class="font-mono">    dimensions (VARCHAR)</text>
+    <text x="8" y="86" class="font-mono">    has_ac, has_bath (BOOL)</text>
+    <text x="8" y="102" class="font-fk">FK  tier_id (INT)</text>
+  </g>
+
+  <!-- TABLE 3: PRICING TIERS -->
+  <g transform="translate(35, 345)">
+    <rect width="180" height="90" class="tbl-body" />
+    <rect width="180" height="22" class="tbl-header" />
+    <text x="8" y="15" class="tbl-title">TABLE: pricing_tiers</text>
+    <text x="8" y="38" class="font-pk">PK  tier_id (INT)</text>
+    <text x="8" y="54" class="font-mono">    monthly_base_rate (DEC)</text>
+    <text x="8" y="70" class="font-mono">    deposit_threshold (DEC)</text>
+    <text x="8" y="86" class="font-mono">    effective_from (DATE)</text>
+  </g>
+
+  <!-- TABLE 4: TENANTS -->
+  <g transform="translate(255, 65)">
+    <rect width="190" height="145" class="tbl-body" />
+    <rect width="190" height="22" class="tbl-header-accent" />
+    <text x="8" y="15" class="tbl-title">TABLE: tenants</text>
+    <text x="8" y="38" class="font-pk">PK  tenant_id (INT)</text>
+    <text x="8" y="54" class="font-mono">    full_name (VARCHAR)</text>
+    <text x="8" y="70" class="font-mono">    national_nik (CHAR:16)</text>
+    <text x="8" y="86" class="font-mono">    contact_phone (VARCHAR)</text>
+    <text x="8" y="102" class="font-mono">    emergency_contact (JSON)</text>
+    <text x="8" y="118" class="font-mono">    university_affil (VARCHAR)</text>
+    <text x="8" y="134" class="font-mono">    status_active (BOOL)</text>
+  </g>
+
+  <!-- TABLE 5: LEASE CONTRACTS -->
+  <g transform="translate(255, 230)">
+    <rect width="190" height="145" class="tbl-body" />
+    <rect width="190" height="22" class="tbl-header-accent" />
+    <text x="8" y="15" class="tbl-title">TABLE: lease_contracts</text>
+    <text x="8" y="38" class="font-pk">PK  contract_id (INT)</text>
+    <text x="8" y="54" class="font-fk">FK  tenant_id (INT)</text>
+    <text x="8" y="70" class="font-fk">FK  room_id (INT)</text>
+    <text x="8" y="86" class="font-mono">    start_date (DATE)</text>
+    <text x="8" y="102" class="font-mono">    end_date (DATE)</text>
+    <text x="8" y="118" class="font-mono">    monthly_rent (DECIMAL)</text>
+    <text x="8" y="134" class="font-mono">    deposit_held (DECIMAL)</text>
+  </g>
+
+  <!-- TABLE 6: UTILITY METERS & READINGS -->
+  <g transform="translate(255, 395)">
+    <rect width="190" height="85" class="tbl-body" />
+    <rect width="190" height="22" class="tbl-header" />
+    <text x="8" y="15" class="tbl-title">TABLE: meter_readings</text>
+    <text x="8" y="38" class="font-pk">PK  reading_id (INT)</text>
+    <text x="8" y="54" class="font-fk">FK  room_id, contract_id</text>
+    <text x="8" y="70" class="font-mono">    kwh_previous, kwh_current</text>
+  </g>
+
+  <!-- TABLE 7: MONTHLY INVOICES -->
+  <g transform="translate(485, 65)">
+    <rect width="190" height="145" class="tbl-body" />
+    <rect width="190" height="22" class="tbl-header-accent" />
+    <text x="8" y="15" class="tbl-title">TABLE: invoices</text>
+    <text x="8" y="38" class="font-pk">PK  invoice_id (INT)</text>
+    <text x="8" y="54" class="font-fk">FK  contract_id (INT)</text>
+    <text x="8" y="70" class="font-mono">    billing_period (CHAR:7)</text>
+    <text x="8" y="86" class="font-mono">    base_rent_amount (DEC)</text>
+    <text x="8" y="102" class="font-mono">    utility_surcharge (DEC)</text>
+    <text x="8" y="118" class="font-mono">    due_date (DATE)</text>
+    <text x="8" y="134" class="font-mono">    payment_status (ENUM)</text>
+  </g>
+
+  <!-- TABLE 8: PAYMENTS -->
+  <g transform="translate(485, 230)">
+    <rect width="190" height="110" class="tbl-body" />
+    <rect width="190" height="22" class="tbl-header" />
+    <text x="8" y="15" class="tbl-title">TABLE: payments</text>
+    <text x="8" y="38" class="font-pk">PK  payment_id (INT)</text>
+    <text x="8" y="54" class="font-fk">FK  invoice_id (INT)</text>
+    <text x="8" y="70" class="font-mono">    paid_amount (DECIMAL)</text>
+    <text x="8" y="86" class="font-mono">    payment_gateway (ENUM)</text>
+    <text x="8" y="102" class="font-mono">    verified_at (TIMESTAMP)</text>
+  </g>
+
+  <!-- TABLE 9: MAINTENANCE REQUESTS -->
+  <g transform="translate(485, 360)">
+    <rect width="190" height="120" class="tbl-body" />
+    <rect width="190" height="22" class="tbl-header" />
+    <text x="8" y="15" class="tbl-title">TABLE: maintenance_logs</text>
+    <text x="8" y="38" class="font-pk">PK  ticket_id (INT)</text>
+    <text x="8" y="54" class="font-fk">FK  room_id, tenant_id</text>
+    <text x="8" y="70" class="font-mono">    issue_category (ENUM)</text>
+    <text x="8" y="86" class="font-mono">    description (TEXT)</text>
+    <text x="8" y="102" class="font-mono">    resolution_status (ENUM)</text>
+  </g>
+
+  <!-- RIGHT PANEL: ENGINEERING NOTES & FIGMA INTEGRATION -->
+  <g transform="translate(700, 65)">
+    <rect width="185" height="415" fill="#EFECE6" stroke="#1E2320" stroke-width="1.2" />
+    <rect width="185" height="26" fill="#1E2320" />
+    <text x="10" y="17" class="tbl-title">DATA INTEGRITY SPECS</text>
+
+    <text x="12" y="50" class="font-tech" font-size="10" font-weight="700" fill="#C98A2E">NORMALIZATION:</text>
+    <text x="12" y="68" class="font-serif" font-size="10" fill="#1E2320">Decomposed all composite</text>
+    <text x="12" y="82" class="font-serif" font-size="10" fill="#1E2320">and transitive attributes</text>
+    <text x="12" y="96" class="font-serif" font-size="10" fill="#1E2320">to guarantee 3NF.</text>
+
+    <line x1="12" y1="112" x2="173" y2="112" stroke="#1E2320" stroke-width="0.5" />
+
+    <text x="12" y="132" class="font-tech" font-size="10" font-weight="700" fill="#C98A2E">IMMUTABLE BILLING:</text>
+    <text x="12" y="150" class="font-serif" font-size="10" fill="#1E2320">Invoices lock tariff amounts</text>
+    <text x="12" y="164" class="font-serif" font-size="10" fill="#1E2320">at generation date, preventing</text>
+    <text x="12" y="178" class="font-serif" font-size="10" fill="#1E2320">historical retroactive price</text>
+    <text x="12" y="192" class="font-serif" font-size="10" fill="#1E2320">corruption.</text>
+
+    <line x1="12" y1="210" x2="173" y2="210" stroke="#1E2320" stroke-width="0.5" />
+
+    <text x="12" y="230" class="font-tech" font-size="10" font-weight="700" fill="#C98A2E">HONEST SCOPE:</text>
+    <text x="12" y="248" class="font-serif" font-size="10" fill="#1E2320">This is a structural</text>
+    <text x="12" y="262" class="font-serif" font-size="10" fill="#1E2320">modeling and UI design</text>
+    <text x="12" y="276" class="font-serif" font-size="10" fill="#1E2320">case study for FINPRO,</text>
+    <text x="12" y="290" class="font-serif" font-size="10" fill="#1E2320">not a deployed app.</text>
+
+    <!-- Figma Direct Button in SVG -->
+    <rect x="12" y="325" width="160" height="38" fill="#1E2320" />
+    <text x="22" y="348" class="font-tech" font-size="9.5" font-weight="700" fill="#E6E1D2">FIGMA FILE LINKED ↗</text>
+  </g>
+</svg>
