@@ -68,16 +68,16 @@
             </div>
         </div>
 
-        <!-- Route & Thermal Map Graphic (Hybrid Blueprint + Bench overlay) -->
+        <!-- Live Application Screenshot (Route Engine UI) -->
         <div class="mb-14 border border-[#DCE8F5]/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden">
             <div class="p-3 bg-[#14213B] border-b border-[#DCE8F5]/20 flex justify-between items-center text-xs font-mono text-[#DCE8F5]">
-                <span>TOPOLOGICAL ROUTE GRAPH // SPPG TO RECIPIENT SCHOOLS</span>
-                <span class="text-[#6E9C87]">THERMAL DECAY MODEL ATTACHED</span>
+                <span>APLIKASI LANGSUNG // ENGINE RUTE OSRM + AI</span>
+                <span class="text-[#6E9C87]">SCREENSHOT ASLI</span>
             </div>
             <div class="bg-[#1B2A4A] p-2 sm:p-4">
                 <img 
-                    src="{{ asset('assets/mbg/mbg-logistics-map.svg') }}" 
-                    alt="MBG Smart Logistics Route Map and Thermal Decay Model" 
+                    src="{{ asset('assets/mbg/mbg-app.png') }}" 
+                    alt="Tampilan aplikasi MBG Smart Logistics: engine rute OSRM dan panel analisis" 
                     class="w-full h-auto object-contain block"
                     loading="lazy"
                 >

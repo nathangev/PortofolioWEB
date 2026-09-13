@@ -21,10 +21,10 @@
                     Toko Sumber Makmur POS
                 </h2>
                 <p class="text-base sm:text-lg font-serif text-[#1E2320]/90 leading-relaxed mb-6">
-                    A retail management platform engineered around a real physical store constraint: selling perishable goods reliably through intermittent internet connectivity without inventory corruption.
+                    Aplikasi kasir dan manajemen toko untuk retail yang menjual barang dengan masa kedaluwarsa. Dibuat agar tetap bisa dipakai walau koneksi internet putus-nyambung, tanpa membuat data stok jadi kacau.
                 </p>
                 <div class="p-4 bg-[#FAF9F6] border-l-3 border-[#C98A2E] border border-[#1E2320]/20 text-sm font-serif text-[#1E2320] leading-relaxed">
-                    <strong>The core engineering challenge:</strong> Combining an offline-first client sync queue (IndexedDB) with strict server-side FIFO batch expiry logic, matching an academic diagram specification (Use Case, ERD, Class, Activity, and Sequence) across 6 rigid modules.
+                    <strong>Tantangan utamanya:</strong> menggabungkan antrean transaksi offline di sisi klien (IndexedDB) dengan aturan stok FIFO berbasis batch dan tanggal kedaluwarsa di server, plus tiga peran pengguna yang aksesnya dipisah ketat.
                 </div>
             </div>
 
@@ -67,57 +67,65 @@
             </div>
         </div>
 
-        <!-- Dashboard / Architecture SVG Graphic Front & Center -->
+        <!-- Live Application Screenshot Front & Center -->
         <div class="mb-14 bg-[#FAF9F6] border border-[#1E2320] shadow-[4px_4px_0px_#1E2320] overflow-hidden">
             <div class="p-3 bg-[#1E2320] text-[#E6E1D2] flex justify-between items-center text-xs font-mono">
-                <span>TERMINAL VIEW // OFFLINE QUEUE TO FIFO PIPELINE</span>
-                <span>DIAGRAM VERIFIED</span>
+                <span>APLIKASI LANGSUNG // HALAMAN LOGIN POS</span>
+                <span>SCREENSHOT ASLI</span>
             </div>
             <div class="p-2 sm:p-4">
                 <img 
-                    src="{{ asset('assets/toko/toko-pos-schema.svg') }}" 
-                    alt="Toko Sumber Makmur POS Architecture and FIFO Queue Diagram" 
+                    src="{{ asset('assets/toko/toko-login.png') }}" 
+                    alt="Tampilan login aplikasi Toko Sumber Makmur POS" 
                     class="w-full h-auto object-contain block"
                     loading="lazy"
                 >
             </div>
         </div>
 
-        <!-- Specific Technical Proof Points (Checked Facts, No Adjectives) -->
+        <!-- Tiga Peran Pengguna di Dalam Toko -->
+        <div class="mb-6">
+            <div class="text-xs font-mono text-[#1E2320]/70 font-bold tracking-wider">
+                TIGA PERAN PENGGUNA DI DALAM TOKO
+            </div>
+            <p class="text-sm font-serif text-[#1E2320]/80 mt-1">
+                Setiap akun hanya bisa mengakses fitur sesuai tugasnya, jadi tanggung jawab tiap orang jelas dan tidak saling tumpang tindih.
+            </p>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="p-6 bg-[#FAF9F6] border border-[#1E2320]">
                 <div class="text-xs font-mono text-[#C98A2E] font-bold mb-2">
-                    01 // OFFLINE QUEUE
+                    01 // ADMIN (OWNER)
                 </div>
                 <h3 class="text-base font-bold text-[#1E2320] mb-2">
-                    IndexedDB Sales Buffer
+                    Pemilik Toko
                 </h3>
                 <p class="text-sm font-serif text-[#1E2320]/85 leading-relaxed">
-                    Transactions generated during network drops persist in client-side IndexedDB storage. Once connectivity returns, an atomic manual synchronization dispatch verifies prices and writes sales items sequentially without packet loss.
+                    Punya akses penuh ke seluruh sistem. Owner mengatur harga jual, mengelola akun pegawai, dan memantau laporan penjualan serta keuangan toko secara menyeluruh untuk mengambil keputusan bisnis.
                 </p>
             </div>
 
             <div class="p-6 bg-[#FAF9F6] border border-[#1E2320]">
                 <div class="text-xs font-mono text-[#C98A2E] font-bold mb-2">
-                    02 // EXPIRY LOGIC
+                    02 // ADMIN GUDANG
                 </div>
                 <h3 class="text-base font-bold text-[#1E2320] mb-2">
-                    FIFO Batch Depletion
+                    Pengelola Stok
                 </h3>
                 <p class="text-sm font-serif text-[#1E2320]/85 leading-relaxed">
-                    Inventory is partitioned by intake batches and explicit expiry dates. Checkouts automatically draw stock from the oldest unexpired batch first, preventing aged goods from lingering in storage.
+                    Bertanggung jawab atas barang masuk. Admin gudang mencatat stok baru per batch beserta tanggal kedaluwarsanya dan memeriksa persediaan, tanpa bisa mengakses menu kasir atau harga.
                 </p>
             </div>
 
             <div class="p-6 bg-[#FAF9F6] border border-[#1E2320]">
                 <div class="text-xs font-mono text-[#C98A2E] font-bold mb-2">
-                    03 // LEDGER INTEGRITY
+                    03 // KASIR
                 </div>
                 <h3 class="text-base font-bold text-[#1E2320] mb-2">
-                    RET- Prefix Stock Batching
+                    Petugas Penjualan
                 </h3>
                 <p class="text-sm font-serif text-[#1E2320]/85 leading-relaxed">
-                    Customer returns do not mutate historical transaction tables. The returns module instantiates a dedicated <code class="text-[#C98A2E] font-mono">RET-</code> batch with isolated quantity tracking to maintain audit trail correctness.
+                    Menangani transaksi di depan. Kasir melayani penjualan ke pelanggan, memproses pembayaran, dan melihat riwayat transaksinya sendiri, tanpa akses ke pengaturan stok maupun laporan keuangan.
                 </p>
             </div>
         </div>

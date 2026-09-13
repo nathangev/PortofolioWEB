@@ -72,10 +72,11 @@
 
             <!-- Action Button -->
             <div class="mt-8 pt-4 border-t border-[#1E2320]/15 flex flex-wrap gap-4 items-center">
-                <a href="#contact" class="btn-action btn-bench">
-                    <span>Request the full paper draft</span>
+                <a href="{{ asset('assets/paper/mbg-smart-logistics-pkm-proposal.pdf') }}" target="_blank" rel="noopener noreferrer" class="btn-action btn-bench">
+                    <span>Read the full paper draft</span>
+                    <span aria-hidden="true">↗</span>
                 </a>
-                <span class="text-xs font-mono opacity-60">Full manuscript available upon academic request</span>
+                <span class="text-xs font-mono opacity-60">Opens the full PDF manuscript in a new tab</span>
             </div>
         </div>
 

@@ -22,6 +22,9 @@
     <!-- 06 // RESEARCH: Clinical Nutrition Biomarker Study (Bench Register) -->
     @include('components.research')
 
-    <!-- 07 // CONTACT: Direct Repositories & Inquiries (Blueprint Register) -->
+    <!-- 07 // EDUCATION: Formal Academic Path (Bench Register) -->
+    @include('components.education')
+
+    <!-- 08 // CONTACT: Direct Repositories & Inquiries (Blueprint Register) -->
     @include('components.contact')
 @endsection

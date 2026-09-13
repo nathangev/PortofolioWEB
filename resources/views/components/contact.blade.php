@@ -3,7 +3,7 @@
 
         <!-- Top Header & Code -->
         <div class="flex items-center gap-4 text-xs font-mono mb-4 text-[#DCE8F5]/70 border-b border-[#DCE8F5]/20 pb-4">
-            <span class="text-[#C98A2E] font-bold">SECTION 07</span>
+            <span class="text-[#C98A2E] font-bold">SECTION 08</span>
             <span>//</span>
             <span>COMMUNICATION &amp; CODE REPOSITORIES</span>
         </div>

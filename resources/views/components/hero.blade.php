@@ -17,26 +17,27 @@
         <!-- SVG Leader Lines Dynamic Canvas -->
         <svg class="leader-line-svg" aria-hidden="true"></svg>
 
-        <!-- Dynamic Fact Callout Badges (SVG leader lines connect to these anchor points) -->
-        <div class="leader-callout hidden md:block" data-anchor="tl" style="top: 18%; left: 8%;">
-            <span class="leader-callout-code">SPEC_01 // FINPRO DB</span>
-            11-table schema
-        </div>
+        <!-- Callout Badges: each one is a jump link into the matching section.
+             SVG leader lines connect these anchor points back to the photo plane. -->
+        <a href="#bridge" class="leader-callout hidden md:block" data-anchor="tl" style="top: 18%; left: 8%;" aria-label="Jump to The Bridge section">
+            <span class="leader-callout-code">SPEC_01 // THE BRIDGE ↗</span>
+            why both fields
+        </a>
 
-        <div class="leader-callout hidden md:block" data-anchor="tr" style="top: 22%; right: 8%;">
-            <span class="leader-callout-code">SPEC_02 // SE SEMESTER 4</span>
-            FIFO batch inventory
-        </div>
+        <a href="#toko-pos" class="leader-callout hidden md:block" data-anchor="tr" style="top: 22%; right: 8%;" aria-label="Jump to shipped systems and experience">
+            <span class="leader-callout-code">SPEC_02 // EXPERIENCE ↗</span>
+            systems I've shipped
+        </a>
 
-        <div class="leader-callout hidden md:block" data-anchor="bl" style="bottom: 18%; left: 10%;">
-            <span class="leader-callout-code">SPEC_03 // SPPG LOGISTICS</span>
-            AI route optimization
-        </div>
+        <a href="#education" class="leader-callout hidden md:block" data-anchor="bl" style="bottom: 18%; left: 10%;" aria-label="Jump to Education section">
+            <span class="leader-callout-code">SPEC_03 // EDUCATION ↗</span>
+            BINUS &amp; Petra 4
+        </a>
 
-        <div class="leader-callout hidden md:block" data-anchor="br" style="bottom: 20%; right: 10%;">
-            <span class="leader-callout-code">SPEC_04 // BIOCHEMISTRY</span>
-            clinical nutrition
-        </div>
+        <a href="#contact" class="leader-callout hidden md:block" data-anchor="br" style="bottom: 20%; right: 10%;" aria-label="Jump to Contact section">
+            <span class="leader-callout-code">SPEC_04 // CONTACT ↗</span>
+            email &amp; repositories
+        </a>
 
         <!-- The Tilted Blueprint Sheet -->
         <div class="blueprint-plane relative p-3 sm:p-4 bg-[#14213B] border border-[#DCE8F5]/40 max-w-[340px] sm:max-w-[380px] w-full mx-auto">

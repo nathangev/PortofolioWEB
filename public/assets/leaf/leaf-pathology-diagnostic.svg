@@ -1,32 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
-  <defs>
-    <style>
-      .bg-bench { fill: #E6E1D2; }
-      .bg-blueprint { fill: #1B2A4A; }
-      .panel-paper { fill: #FAF9F6; stroke: #1E2320; stroke-width: 1.5; }
-      .panel-bp { fill: #1B2A4A; stroke: #DCE8F5; stroke-width: 1.2; }
-      .font-tech { font-family: 'Archivo', sans-serif; }
-      .font-serif { font-family: 'Lora', serif; }
-      .font-mono { font-family: 'Courier New', monospace; }
-      .box-chlorosis { stroke: #C98A2E; stroke-width: 2; fill: rgba(201, 138, 46, 0.15); stroke-dasharray: 4 2; }
-      .box-healthy { stroke: #6E9C87; stroke-width: 2; fill: rgba(110, 156, 135, 0.15); }
-      .tick { stroke: #1E2320; stroke-width: 0.8; }
-    </style>
-  </defs>
-
   <!-- Base Bench Paper Canvas with Blueprint Header/Footer overlay -->
-  <rect width="920" height="540" class="bg-bench" />
+  <rect width="920" height="540" fill="#E6E1D2" />
 
   <!-- Coordinate ticks -->
   <line x1="30" y1="45" x2="890" y2="45" stroke="#1E2320" stroke-width="1" />
-  <text x="35" y="32" class="font-tech" font-size="12" font-weight="700" fill="#1E2320">DIAG 03.HYBRID // COMPUTER VISION LEAF PATHOLOGY &amp; CLINICAL TRANSLATION</text>
-  <text x="735" y="32" class="font-tech" font-size="10" fill="#1E2320">MODEL: MOBILENETV2-CLINICAL</text>
+  <text x="35" y="32" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#1E2320">DIAG 03.HYBRID // COMPUTER VISION LEAF PATHOLOGY &amp; CLINICAL TRANSLATION</text>
+  <text x="735" y="32" font-family="Arial, sans-serif" font-size="10" fill="#1E2320">MODEL: MOBILENETV2-CLINICAL</text>
 
   <!-- Left Side: Foliar Visual Diagnostic Plane -->
   <g transform="translate(35, 65)">
-    <rect width="440" height="435" class="panel-paper" />
+    <rect width="440" height="435" fill="#FAF9F6" stroke="#1E2320" stroke-width="1.5" />
     <rect width="440" height="26" fill="#1E2320" />
-    <text x="14" y="17" class="font-tech" font-size="10" font-weight="700" fill="#E6E1D2">INPUT SCAN: FOLIAR SPECIMEN // SOLANUM LYCOPERSICUM</text>
+    <text x="14" y="17" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#E6E1D2">INPUT SCAN: FOLIAR SPECIMEN // SOLANUM LYCOPERSICUM</text>
 
     <!-- Synthetic Stylized Leaf Graphic with Pathological Zones -->
     <g transform="translate(220, 225)">
@@ -47,67 +32,67 @@
       <circle cx="-15" cy="-25" r="8" fill="#5A3A10" opacity="0.8" />
 
       <!-- Bounding Box Annotation 1: Chlorosis Detection -->
-      <rect x="-55" y="-75" width="115" height="115" class="box-chlorosis" />
+      <rect x="-55" y="-75" width="115" height="115" stroke="#C98A2E" stroke-width="2" fill="rgba(201, 138, 46, 0.15)" stroke-dasharray="4 2" />
       <rect x="-55" y="-93" width="115" height="18" fill="#C98A2E" />
-      <text x="-50" y="-80" class="font-tech" font-size="9" font-weight="700" fill="#FFFFFF">ROI_01: CHLOROSIS [94.2%]</text>
+      <text x="-50" y="-80" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">ROI_01: CHLOROSIS [94.2%]</text>
 
       <!-- Bounding Box Annotation 2: Healthy Control Zone -->
-      <rect x="25" y="55" width="75" height="60" class="box-healthy" />
+      <rect x="25" y="55" width="75" height="60" stroke="#6E9C87" stroke-width="2" fill="rgba(110, 156, 135, 0.15)" />
       <rect x="25" y="40" width="75" height="15" fill="#6E9C87" />
-      <text x="29" y="51" class="font-tech" font-size="8.5" font-weight="700" fill="#FFFFFF">ROI_02: PARENCHYMA</text>
+      <text x="29" y="51" font-family="Arial, sans-serif" font-size="8.5" font-weight="700" fill="#FFFFFF">ROI_02: PARENCHYMA</text>
     </g>
 
     <!-- Scale & Metadata Footnote -->
-    <text x="20" y="415" class="font-mono" font-size="10" fill="#1E2320">SCALE: 1.0x | RESOLUTION: 512x512 RGB | NORMALIZATION: IMAGENET</text>
+    <text x="20" y="415" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1E2320">SCALE: 1.0x | RESOLUTION: 512x512 RGB | NORMALIZATION: IMAGENET</text>
   </g>
 
   <!-- Right Side: Blueprint Deep Diagnostic Inference Panel -->
   <g transform="translate(500, 65)">
-    <rect width="385" height="435" class="panel-bp" />
+    <rect width="385" height="435" fill="#1B2A4A" stroke="#DCE8F5" stroke-width="1.2" />
     <rect width="385" height="26" fill="#DCE8F5" />
-    <text x="14" y="17" class="font-tech" font-size="10" font-weight="700" fill="#1B2A4A">NEURAL INFERENCE // CLINICAL PARALLEL</text>
+    <text x="14" y="17" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1B2A4A">NEURAL INFERENCE // CLINICAL PARALLEL</text>
 
     <!-- Section 1: Symptom Mapping to Clinical Diagnosis -->
     <g transform="translate(20, 45)">
-      <text x="0" y="15" class="font-tech" font-size="11" font-weight="700" fill="#C98A2E">METHODOLOGICAL PARALLEL:</text>
-      <text x="0" y="32" class="font-serif" font-size="11" fill="#DCE8F5">Clinical nutrition trains the clinician to distinguish</text>
-      <text x="0" y="47" class="font-serif" font-size="11" fill="#DCE8F5">systemic metabolic malnutrition from acute pathogen infection.</text>
-      <text x="0" y="62" class="font-serif" font-size="11" fill="#DCE8F5">This CNN applies that exact hierarchy to foliar biology:</text>
+      <text x="0" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#E7A94A">METHODOLOGICAL PARALLEL:</text>
+      <text x="0" y="32" font-family="Georgia, serif" font-size="11" fill="#DCE8F5">Clinical nutrition trains the clinician to distinguish</text>
+      <text x="0" y="47" font-family="Georgia, serif" font-size="11" fill="#DCE8F5">systemic metabolic malnutrition from acute pathogen infection.</text>
+      <text x="0" y="62" font-family="Georgia, serif" font-size="11" fill="#DCE8F5">This CNN applies that exact hierarchy to foliar biology:</text>
     </g>
 
     <!-- Confidence Meters (Fact-based, not generic skill bars) -->
     <g transform="translate(20, 130)">
-      <text x="0" y="14" class="font-tech" font-size="10" font-weight="700" fill="#DCE8F5">PRIMARY INFERENCE (ABIOTIC DEFICIENCY)</text>
-      
+      <text x="0" y="14" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#DCE8F5">PRIMARY INFERENCE (ABIOTIC DEFICIENCY)</text>
+
       <!-- Class 1 -->
       <rect x="0" y="24" width="345" height="22" fill="#24375E" stroke="#C98A2E" stroke-width="1" />
       <rect x="0" y="24" width="325" height="22" fill="#C98A2E" />
-      <text x="10" y="39" class="font-tech" font-size="10" font-weight="700" fill="#1B2A4A">Nitrogen Chlorosis (Abiotic Deficiency)</text>
-      <text x="290" y="39" class="font-mono" font-size="10" font-weight="700" fill="#1B2A4A">94.2%</text>
+      <text x="10" y="39" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1B2A4A">Nitrogen Chlorosis (Abiotic Deficiency)</text>
+      <text x="290" y="39" font-family="Consolas, 'Courier New', monospace" font-size="10" font-weight="700" fill="#1B2A4A">94.2%</text>
 
       <!-- Class 2 -->
       <rect x="0" y="56" width="345" height="22" fill="#24375E" stroke="#6E9C87" stroke-width="0.8" />
       <rect x="0" y="56" width="20" height="22" fill="#6E9C87" />
-      <text x="10" y="71" class="font-tech" font-size="10" fill="#DCE8F5">Early Fungal Blight (Biotic)</text>
-      <text x="305" y="71" class="font-mono" font-size="10" fill="#DCE8F5">3.4%</text>
+      <text x="10" y="71" font-family="Arial, sans-serif" font-size="10" fill="#DCE8F5">Early Fungal Blight (Biotic)</text>
+      <text x="305" y="71" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#DCE8F5">3.4%</text>
 
       <!-- Class 3 -->
       <rect x="0" y="88" width="345" height="22" fill="#24375E" stroke="#DCE8F5" stroke-width="0.5" />
       <rect x="0" y="88" width="12" height="22" fill="#DCE8F5" />
-      <text x="10" y="103" class="font-tech" font-size="10" fill="#DCE8F5">Potassium Scorch (Abiotic)</text>
-      <text x="305" y="103" class="font-mono" font-size="10" fill="#DCE8F5">2.4%</text>
+      <text x="10" y="103" font-family="Arial, sans-serif" font-size="10" fill="#DCE8F5">Potassium Scorch (Abiotic)</text>
+      <text x="305" y="103" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#DCE8F5">2.4%</text>
     </g>
 
     <!-- Botanical-Biochemical Intervention Log -->
     <g transform="translate(20, 275)">
       <rect width="345" height="135" fill="#14213B" stroke="#6E9C87" stroke-width="1" />
-      <text x="12" y="22" class="font-tech" font-size="10" font-weight="700" fill="#6E9C87">REMEDIATION PRESCRIPTION // BIOCHEMICAL REMEDY</text>
-      <text x="12" y="44" class="font-serif" font-size="10.5" fill="#DCE8F5">• Identified interveinal chlorosis migrating basipetally.</text>
-      <text x="12" y="62" class="font-serif" font-size="10.5" fill="#DCE8F5">• Diagnosis matches vegetative nitrogen depletion.</text>
-      <text x="12" y="80" class="font-serif" font-size="10.5" fill="#DCE8F5">• Recommended: Calcium Nitrate foliar spray (0.8%).</text>
-      <text x="12" y="98" class="font-serif" font-size="10.5" fill="#DCE8F5">• Avoid unnecessary antifungal sprays; save input costs.</text>
+      <text x="12" y="22" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#8FBFA6">REMEDIATION PRESCRIPTION // BIOCHEMICAL REMEDY</text>
+      <text x="12" y="44" font-family="Georgia, serif" font-size="10.5" fill="#DCE8F5">• Identified interveinal chlorosis migrating basipetally.</text>
+      <text x="12" y="62" font-family="Georgia, serif" font-size="10.5" fill="#DCE8F5">• Diagnosis matches vegetative nitrogen depletion.</text>
+      <text x="12" y="80" font-family="Georgia, serif" font-size="10.5" fill="#DCE8F5">• Recommended: Calcium Nitrate foliar spray (0.8%).</text>
+      <text x="12" y="98" font-family="Georgia, serif" font-size="10.5" fill="#DCE8F5">• Avoid unnecessary antifungal sprays; save input costs.</text>
       <line x1="12" y1="110" x2="333" y2="110" stroke="#6E9C87" stroke-width="0.8" />
-      <text x="12" y="125" class="font-tech" font-size="9" fill="#6E9C87">DEPLOYABLE: FASTAI / ONNX RUNTIME FOR ANDROID EDGE</text>
+      <text x="12" y="125" font-family="Arial, sans-serif" font-size="9" fill="#8FBFA6">DEPLOYABLE: FASTAI / ONNX RUNTIME FOR ANDROID EDGE</text>
     </g>
   </g>
 </svg>
