@@ -14,6 +14,13 @@
   --amber: #C98A2E;
   --sage: #6E9C87;
 
+  /* Translucent veils over the 3D background layer. Tuned so the wireframe
+     scene stays legible behind the type without eroding text contrast — the
+     scene is thin light lines on the same navy, so average luminance barely
+     shifts. Hybrid sits slightly denser because it carries accent gradients. */
+  --blueprint-veil: rgba(27, 42, 74, 0.66);
+  --hybrid-veil: rgba(27, 42, 74, 0.74);
+
   /* Fonts */
   --font-tech: 'Archivo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Lora', Georgia, Cambria, "Times New Roman", Times, serif;
@@ -64,12 +71,37 @@ p, .prose-body {
 }
 
 /* ==========================================================================
+   3D BLUEPRINT BACKGROUND LAYER (WebGL)
+   A fixed canvas behind every section. Purely decorative: it never receives
+   pointer events, and all readable content stacks above it.
+   ========================================================================== */
+#scene-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  /* Sits on the body's navy fill; the canvas itself is transparent. */
+  background: transparent;
+}
+
+/* Content must render above the canvas. */
+#app-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
    REGISTERS: Blueprint, Bench, & Hybrid
    ========================================================================== */
 
 /* 1. BLUEPRINT REGISTER (Hero, Intro, Contact) */
+/* Translucent so the 3D construction scene reads through behind the type. */
 .register-blueprint {
-  background-color: var(--blueprint-bg);
+  background-color: var(--blueprint-veil);
   color: var(--blueprint-line);
   position: relative;
 }
@@ -127,7 +159,7 @@ p, .prose-body {
 /* 3. HYBRID REGISTER (MBG Smart Logistics, Leaf Classifier AI) */
 /* The ONLY place Amber and Sage meet together; interlocking Blueprint + Bench */
 .register-hybrid {
-  background-color: var(--blueprint-bg);
+  background-color: var(--hybrid-veil);
   color: var(--blueprint-line);
   position: relative;
   border-top: 2px solid var(--amber);
@@ -369,6 +401,7 @@ body.bench-active .ruler-tick-mark {
   z-index: 30;
 }
 
+/* Callouts double as jump links into their matching section. */
 .leader-callout {
   position: absolute;
   font-family: var(--font-tech);
@@ -381,12 +414,26 @@ body.bench-active .ruler-tick-mark {
   background-color: rgba(27, 42, 74, 0.92);
   white-space: nowrap;
   pointer-events: auto;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
-.leader-callout:hover {
+.leader-callout:hover,
+.leader-callout:focus-visible {
   border-color: var(--amber);
+  background-color: rgba(27, 42, 74, 0.98);
   transform: translateY(-2px);
+}
+
+.leader-callout:focus-visible {
+  outline: 2px dashed var(--amber);
+  outline-offset: 3px;
+}
+
+.leader-callout:hover .leader-callout-code {
+  color: var(--amber);
+  opacity: 1;
 }
 
 .leader-callout-code {

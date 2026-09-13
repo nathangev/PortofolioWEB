@@ -57,8 +57,15 @@
 
         <div class="ruler-tick-mark"></div>
 
-        <a href="#contact" class="ruler-section-node" title="07 // CONTACT">
-            <span class="ruler-indicator-code">07.CONTACT</span>
+        <a href="#education" class="ruler-section-node" title="07 // EDUCATION">
+            <span class="ruler-indicator-code">07.EDU</span>
+            <span class="ruler-tick-mark"></span>
+        </a>
+
+        <div class="ruler-tick-mark"></div>
+
+        <a href="#contact" class="ruler-section-node" title="08 // CONTACT">
+            <span class="ruler-indicator-code">08.CONTACT</span>
             <span class="ruler-tick-mark major"></span>
         </a>
 

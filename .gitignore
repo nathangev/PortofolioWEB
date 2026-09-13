@@ -25,3 +25,12 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Personal paper PDF — contains private data (NIM, email, phone, signatures). Do not publish.
+/public/assets/paper/
+
+# Static export is deployed separately (has its own git repo + vercel.json).
+/static-export/
+
+# Netlify config is unused (deploying to Vercel instead).
+/netlify.toml

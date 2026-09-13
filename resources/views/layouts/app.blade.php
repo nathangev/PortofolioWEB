@@ -16,6 +16,9 @@
 </head>
 <body class="bg-[#1B2A4A] text-[#DCE8F5] antialiased selection:bg-[#C98A2E] selection:text-white">
 
+    <!-- Fixed 3D Blueprint Background Layer (WebGL, scroll-driven) -->
+    <canvas id="scene-3d" aria-hidden="true"></canvas>
+
     <!-- Hidden SVG Definitions for Cyanotype Duotone Mapping (§4) -->
     <svg class="hidden" aria-hidden="true" width="0" height="0">
         <defs>

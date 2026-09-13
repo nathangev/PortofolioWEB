@@ -1,33 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
   <defs>
-    <style>
-      .bg-blueprint { fill: #1B2A4A; }
-      .bg-bench { fill: #E6E1D2; }
-      .line-blueprint { stroke: #DCE8F5; stroke-width: 1; fill: none; opacity: 0.7; }
-      .grid-tick { stroke: #DCE8F5; stroke-width: 0.8; opacity: 0.4; }
-      .route-path { stroke: #C98A2E; stroke-width: 2.5; stroke-dasharray: 6 3; fill: none; }
-      .hub-marker { fill: #C98A2E; stroke: #DCE8F5; stroke-width: 2; }
-      .school-marker { fill: #6E9C87; stroke: #1E2320; stroke-width: 1.8; }
-      .font-tech { font-family: 'Archivo', sans-serif; }
-      .font-serif { font-family: 'Lora', serif; }
-      .thermal-safe { fill: rgba(110, 156, 135, 0.25); stroke: #6E9C87; stroke-width: 1.5; }
-      .thermal-warning { fill: rgba(201, 138, 46, 0.25); stroke: #C98A2E; stroke-width: 1.5; }
-    </style>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
     </filter>
   </defs>
 
   <!-- Split / Interlocking Canvas: Blueprint (Engineering) meets Bench (Nutrition) -->
-  <rect width="920" height="540" class="bg-blueprint" />
-  
-  <!-- Subtle Blueprint coordinate grid -->
-  <line x1="40" y1="40" x2="880" y2="40" class="line-blueprint" />
-  <line x1="40" y1="500" x2="880" y2="500" class="line-blueprint" />
-  <line x1="40" y1="40" x2="40" y2="500" class="line-blueprint" />
-  <line x1="880" y1="40" x2="880" y2="500" class="line-blueprint" />
+  <rect width="920" height="540" fill="#1B2A4A" />
 
-  <g class="grid-tick">
+  <!-- Subtle Blueprint coordinate grid -->
+  <line x1="40" y1="40" x2="880" y2="40" stroke="#DCE8F5" stroke-width="1" fill="none" opacity="0.7" />
+  <line x1="40" y1="500" x2="880" y2="500" stroke="#DCE8F5" stroke-width="1" fill="none" opacity="0.7" />
+  <line x1="40" y1="40" x2="40" y2="500" stroke="#DCE8F5" stroke-width="1" fill="none" opacity="0.7" />
+  <line x1="880" y1="40" x2="880" y2="500" stroke="#DCE8F5" stroke-width="1" fill="none" opacity="0.7" />
+
+  <g stroke="#DCE8F5" stroke-width="0.8" opacity="0.4">
     <line x1="40" y1="140" x2="880" y2="140" stroke-dasharray="2 6" />
     <line x1="40" y1="260" x2="880" y2="260" stroke-dasharray="2 6" />
     <line x1="40" y1="380" x2="880" y2="380" stroke-dasharray="2 6" />
@@ -37,79 +24,79 @@
   </g>
 
   <!-- Technical Coordinate Callouts -->
-  <text x="50" y="28" class="font-tech" font-size="11" font-weight="700" fill="#DCE8F5">SYS 02.HYBRID // MBG ROUTING TOPOLOGY: MALANG CENTRAL SPPG CLUSTER</text>
-  <text x="730" y="28" class="font-tech" font-size="10" fill="#DCE8F5">COORD: 7°58'48"S 112°37'48"E</text>
+  <text x="50" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#DCE8F5">SYS 02.HYBRID // MBG ROUTING TOPOLOGY: MALANG CENTRAL SPPG CLUSTER</text>
+  <text x="730" y="28" font-family="Arial, sans-serif" font-size="10" fill="#DCE8F5">COORD: 7°58'48"S 112°37'48"E</text>
 
   <!-- ROUTE MAP AREA (Left & Center) -->
   <!-- Route Vector Lines -->
-  <path d="M 170 330 Q 230 200 360 170 T 540 140 T 670 240 T 490 380" class="route-path" />
+  <path d="M 170 330 Q 230 200 360 170 T 540 140 T 670 240 T 490 380" stroke="#C98A2E" stroke-width="2.5" stroke-dasharray="6 3" fill="none" />
 
   <!-- SPPG Central Kitchen Node (Hub) -->
   <g transform="translate(170, 330)">
-    <circle r="22" class="hub-marker" filter="url(#shadow)" />
+    <circle r="22" fill="#C98A2E" stroke="#DCE8F5" stroke-width="2" filter="url(#shadow)" />
     <circle r="36" fill="none" stroke="#C98A2E" stroke-width="1" stroke-dasharray="3 3" />
-    <text x="0" y="5" class="font-tech" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">SPPG</text>
-    
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">SPPG</text>
+
     <!-- Annotation Card -->
-    <rect x="-95" y="42" width="190" height="52" fill="#1B2A4A" stroke="#C98A2E" stroke-width="1.2" />
-    <text x="-85" y="58" class="font-tech" font-size="10" font-weight="700" fill="#DCE8F5">CENTRAL KITCHEN 01</text>
-    <text x="-85" y="73" class="font-serif" font-size="9.5" fill="#DCE8F5">Batches packed: 06:15 WIB</text>
-    <text x="-85" y="86" class="font-serif" font-size="9.5" fill="#C98A2E">Capacity: 2,400 meals / morning</text>
+    <rect x="-95" y="42" width="190" height="60" fill="#1B2A4A" stroke="#C98A2E" stroke-width="1.2" />
+    <text x="-85" y="59" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#DCE8F5">CENTRAL KITCHEN 01</text>
+    <text x="-85" y="76" font-family="Georgia, serif" font-size="9.5" fill="#DCE8F5">Batches packed: 06:15 WIB</text>
+    <text x="-85" y="92" font-family="Georgia, serif" font-size="9.5" fill="#E7A94A">Capacity: 2,400 meals / morning</text>
   </g>
 
   <!-- School Node 1: Recipient A -->
   <g transform="translate(360, 170)">
-    <circle r="14" class="school-marker" filter="url(#shadow)" />
-    <text x="0" y="4" class="font-tech" font-size="9" font-weight="700" fill="#E6E1D2" text-anchor="middle">SC-1</text>
-    <rect x="22" y="-18" width="165" height="42" fill="#E6E1D2" stroke="#1E2320" stroke-width="1" />
-    <text x="30" y="-3" class="font-tech" font-size="10" font-weight="700" fill="#1E2320">SDN Lowokwaru 2</text>
-    <text x="30" y="12" class="font-serif" font-size="9" fill="#1E2320">ETA: +38 min (Recess 09:15 WIB)</text>
-    <text x="30" y="20" class="font-tech" font-size="8" font-weight="600" fill="#6E9C87">THERMAL WINDOW: SAFE (68°C)</text>
+    <circle r="14" fill="#6E9C87" stroke="#1E2320" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="0" y="4" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">SC-1</text>
+    <rect x="22" y="-22" width="180" height="54" fill="#E6E1D2" stroke="#1E2320" stroke-width="1" />
+    <text x="30" y="-7" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1E2320">SDN Lowokwaru 2</text>
+    <text x="30" y="9" font-family="Georgia, serif" font-size="9" fill="#1E2320">ETA: +38 min (Recess 09:15 WIB)</text>
+    <text x="30" y="25" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#3F6B54">THERMAL WINDOW: SAFE (68°C)</text>
   </g>
 
   <!-- School Node 2: Recipient B -->
   <g transform="translate(540, 140)">
-    <circle r="14" class="school-marker" filter="url(#shadow)" />
-    <text x="0" y="4" class="font-tech" font-size="9" font-weight="700" fill="#E6E1D2" text-anchor="middle">SC-2</text>
-    <rect x="22" y="-18" width="165" height="42" fill="#E6E1D2" stroke="#1E2320" stroke-width="1" />
-    <text x="30" y="-3" class="font-tech" font-size="10" font-weight="700" fill="#1E2320">SMPN 3 Malang</text>
-    <text x="30" y="12" class="font-serif" font-size="9" fill="#1E2320">ETA: +65 min (Recess 09:30 WIB)</text>
-    <text x="30" y="20" class="font-tech" font-size="8" font-weight="600" fill="#6E9C87">THERMAL WINDOW: SAFE (63°C)</text>
+    <circle r="14" fill="#6E9C87" stroke="#1E2320" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="0" y="4" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">SC-2</text>
+    <rect x="22" y="-22" width="180" height="54" fill="#E6E1D2" stroke="#1E2320" stroke-width="1" />
+    <text x="30" y="-7" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1E2320">SMPN 3 Malang</text>
+    <text x="30" y="9" font-family="Georgia, serif" font-size="9" fill="#1E2320">ETA: +65 min (Recess 09:30 WIB)</text>
+    <text x="30" y="25" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#3F6B54">THERMAL WINDOW: SAFE (63°C)</text>
   </g>
 
   <!-- School Node 3: Recipient C (Critical window) -->
   <g transform="translate(670, 240)">
-    <circle r="14" class="school-marker" filter="url(#shadow)" />
-    <text x="0" y="4" class="font-tech" font-size="9" font-weight="700" fill="#E6E1D2" text-anchor="middle">SC-3</text>
-    <rect x="-185" y="-18" width="165" height="42" fill="#E6E1D2" stroke="#C98A2E" stroke-width="1.2" />
-    <text x="-177" y="-3" class="font-tech" font-size="10" font-weight="700" fill="#1E2320">SMAN 1 Kota Malang</text>
-    <text x="-177" y="12" class="font-serif" font-size="9" fill="#1E2320">ETA: +98 min (Recess 10:00 WIB)</text>
-    <text x="-177" y="20" class="font-tech" font-size="8" font-weight="700" fill="#C98A2E">THERMAL THRESHOLD: BUFFER 22M</text>
+    <circle r="14" fill="#6E9C87" stroke="#1E2320" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="0" y="4" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">SC-3</text>
+    <rect x="-200" y="-22" width="180" height="54" fill="#E6E1D2" stroke="#C98A2E" stroke-width="1.2" />
+    <text x="-192" y="-7" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1E2320">SMAN 1 Kota Malang</text>
+    <text x="-192" y="9" font-family="Georgia, serif" font-size="9" fill="#1E2320">ETA: +98 min (Recess 10:00 WIB)</text>
+    <text x="-192" y="25" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#B0741F">THERMAL THRESHOLD: BUFFER 22M</text>
   </g>
 
   <!-- Final Node: Recipient D -->
   <g transform="translate(490, 380)">
-    <circle r="14" class="school-marker" filter="url(#shadow)" />
-    <text x="0" y="4" class="font-tech" font-size="9" font-weight="700" fill="#E6E1D2" text-anchor="middle">SC-4</text>
-    <rect x="-185" y="-18" width="165" height="42" fill="#E6E1D2" stroke="#1E2320" stroke-width="1" />
-    <text x="-177" y="-3" class="font-tech" font-size="10" font-weight="700" fill="#1E2320">MIN 1 Kota Malang</text>
-    <text x="-177" y="12" class="font-serif" font-size="9" fill="#1E2320">ETA: +112 min (Final Stop)</text>
-    <text x="-177" y="20" class="font-tech" font-size="8" font-weight="700" fill="#6E9C87">DISPATCH VALIDATED</text>
+    <circle r="14" fill="#6E9C87" stroke="#1E2320" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="0" y="4" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">SC-4</text>
+    <rect x="-200" y="-22" width="180" height="54" fill="#E6E1D2" stroke="#1E2320" stroke-width="1" />
+    <text x="-192" y="-7" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1E2320">MIN 1 Kota Malang</text>
+    <text x="-192" y="9" font-family="Georgia, serif" font-size="9" fill="#1E2320">ETA: +112 min (Final Stop)</text>
+    <text x="-192" y="25" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#3F6B54">DISPATCH VALIDATED</text>
   </g>
 
   <!-- OVERLAY PANEL: Bench/Paper Lab Note (Right Side bottom) -->
   <g transform="translate(570, 345)">
     <rect width="300" height="145" fill="#E6E1D2" stroke="#1E2320" stroke-width="1.5" />
     <rect width="300" height="24" fill="#1E2320" />
-    <text x="12" y="16" class="font-tech" font-size="10" font-weight="700" fill="#E6E1D2">HEALTH REGULATION // NUTRITION CONSTRAINT</text>
-    
-    <text x="14" y="45" class="font-tech" font-size="10" font-weight="700" fill="#1E2320">Perishability &amp; Thermal Decay Model</text>
-    <text x="14" y="62" class="font-serif" font-size="10" fill="#1E2320">Cooked meals in thermal insulated containers experience</text>
-    <text x="14" y="76" class="font-serif" font-size="10" fill="#1E2320">temperature decay of ~0.14°C/min. Algorithm disallows</text>
-    <text x="14" y="90" class="font-serif" font-size="10" fill="#1E2320">any route edge where total transit exceeds 120 minutes</text>
-    <text x="14" y="104" class="font-serif" font-size="10" fill="#1E2320">to prevent microbial proliferation prior to consumption.</text>
+    <text x="12" y="16" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#E6E1D2">HEALTH REGULATION // NUTRITION CONSTRAINT</text>
+
+    <text x="14" y="45" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#1E2320">Perishability &amp; Thermal Decay Model</text>
+    <text x="14" y="62" font-family="Georgia, serif" font-size="10" fill="#1E2320">Cooked meals in thermal insulated containers experience</text>
+    <text x="14" y="76" font-family="Georgia, serif" font-size="10" fill="#1E2320">temperature decay of ~0.14°C/min. Algorithm disallows</text>
+    <text x="14" y="90" font-family="Georgia, serif" font-size="10" fill="#1E2320">any route edge where total transit exceeds 120 minutes</text>
+    <text x="14" y="104" font-family="Georgia, serif" font-size="10" fill="#1E2320">to prevent microbial proliferation prior to consumption.</text>
 
     <line x1="14" y1="116" x2="286" y2="116" stroke="#C98A2E" stroke-width="1" />
-    <text x="14" y="132" class="font-tech" font-size="9.5" font-weight="700" fill="#C98A2E">ALGORITHM: VRP-TW (TIME WINDOW + THERMAL PENALTY)</text>
+    <text x="14" y="132" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" fill="#B0741F">ALGORITHM: VRP-TW (TIME WINDOW + THERMAL PENALTY)</text>
   </g>
 </svg>
